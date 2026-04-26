@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Лев Измайлов — ML/DS Engineer, AI Architect</title>
+  <meta name="description" content="Специалист в области машинного обучения и анализа данных. End-to-end ML-решения, NLP, RAG-системы, AI-автоматизация.">
+
+  <meta property="og:title" content="Лев Измайлов — ML/DS Engineer, AI Architect">
+  <meta property="og:description" content="Специалист в области машинного обучения и анализа данных. End-to-end ML-решения, NLP, RAG-системы, AI-автоматизация.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://izlaster.github.io">
+  <meta property="og:image" content="https://izlaster.github.io/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Лев Измайлов — ML/DS Engineer, AI Architect">
+  <meta name="twitter:description" content="Специалист в области машинного обучения и анализа данных. End-to-end ML-решения, NLP, RAG-системы, AI-автоматизация.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0a0a0a',
+            surface: '#111111',
+            border: '#222222',
+            muted: '#888888',
+            fg: '#e8e8e8',
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    body { background: #0a0a0a; color: #e8e8e8; font-family: 'Inter', sans-serif; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .typewriter-cursor { display: inline-block; width: 2px; height: 1.15em; background: #a78bfa; margin-left: 2px; vertical-align: text-bottom; animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+    .terminal { background: #111111; border: 1px solid #222222; border-radius: 14px; font-family: 'JetBrains Mono', monospace; }
+    .terminal-header { display: flex; align-items: center; gap: 6px; padding: 14px 18px; border-bottom: 1px solid #222222; }
+    .terminal-dot { width: 11px; height: 11px; border-radius: 50%; }
+
+    .tag { display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; border: 1px solid #222222; background: #111111; color: #aaaaaa; transition: all 0.15s ease; }
+    .tag:hover { border-color: #444444; color: #e8e8e8; transform: translateY(-1px); }
+
+    .card { background: #111111; border: 1px solid #1a1a1a; border-radius: 14px; transition: all 0.2s ease; }
+    .card:hover { border-color: #333333; transform: translateY(-2px); }
+
+    .accent { color: #a78bfa; }
+    .accent-pink { color: #f472b6; }
+
+    ::selection { background: rgba(167, 139, 250, 0.3); color: #fff; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #222222; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #333333; }
+  </style>
+</head>
+
+<body class="min-h-screen">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-md border-b border-border">
+    <div class="max-w-[960px] mx-auto px-8 h-16 flex items-center justify-between">
+      <a href="#hero" class="font-heading font-bold text-lg text-fg tracking-tight">ЛИ</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#experience" class="text-sm text-muted hover:text-fg transition-colors">Опыт</a>
+        <a href="#skills" class="text-sm text-muted hover:text-fg transition-colors">Навыки</a>
+        <a href="#projects" class="text-sm text-muted hover:text-fg transition-colors">Проекты</a>
+        <a href="#education" class="text-sm text-muted hover:text-fg transition-colors">Образование</a>
+        <a href="#contact" class="text-sm text-muted hover:text-fg transition-colors">Контакты</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-muted hover:text-fg transition-colors" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-border">
+      <div class="max-w-[960px] mx-auto px-8 py-4 flex flex-col gap-3">
+        <a href="#experience" class="text-base text-muted hover:text-fg transition-colors py-1">Опыт</a>
+        <a href="#skills" class="text-base text-muted hover:text-fg transition-colors py-1">Навыки</a>
+        <a href="#projects" class="text-base text-muted hover:text-fg transition-colors py-1">Проекты</a>
+        <a href="#education" class="text-base text-muted hover:text-fg transition-colors py-1">Образование</a>
+        <a href="#contact" class="text-base text-muted hover:text-fg transition-colors py-1">Контакты</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <section id="hero" class="pt-36 pb-28 px-8">
+    <div class="max-w-[960px] mx-auto">
+      <div class="flex flex-col md:flex-row items-start gap-10 mb-6">
+        <div class="flex-1">
+          <div class="reveal">
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-border bg-surface mb-10">
+              <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span class="text-sm text-muted font-medium">Открыт к предложениям</span>
+            </div>
+          </div>
+
+          <h1 class="font-heading font-bold text-5xl md:text-7xl tracking-tight text-fg mb-5 reveal" style="transition-delay: 0.05s;">Лев Измайлов</h1>
+        </div>
+
+        <!-- EDIT: Replace photo.jpg with your own photo. Place photo.jpg in the same folder as index.html -->
+        <div class="reveal shrink-0" style="transition-delay: 0.1s;">
+          <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl border-2 border-border overflow-hidden bg-surface">
+            <img src="src/Photo.png" alt="Лев Измайлов" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center text-4xl md:text-5xl font-heading font-bold text-muted bg-surface\'>ЛИ</div>'">
+          </div>
+        </div>
+      </div>
+
+      <div class="text-xl md:text-2xl text-muted mb-8 h-9 reveal" style="transition-delay: 0.1s;">
+        <span id="typewriter" class="accent"></span><span class="typewriter-cursor"></span>
+      </div>
+
+      <p class="text-lg leading-relaxed text-muted max-w-[960px] mb-12 reveal" style="transition-delay: 0.15s;">
+        Специалист в области машинного обучения и построения end-to-end ML-решений и разработки прикладных сервисов. Работал с задачами прогнозирования пользовательского поведения, обработки естественного языка (NLP), автоматизации и интеграции через API. Имеет опыт применения моделей CatBoost, XGBoost, BERT, а также разработки RAG-систем в закрытом контуре с использованием больших языковых моделей на vLLM и векторного поиска, интеграции ASRмоделей для транскрибации, предобработки данных через Pandas и PyTorch, развёртывания интерфейсов на базе OpenWebUI и оркестровки взаимодействия моделей через MCP (Model Context Protocol) для безопасной работы с внутренними данными. Владею практиками создания микросервисов на Python с использованием Docker, Celery, n8n и облачных сервисов (Google API, Telegram API). Реализованные проекты включают систему автоматической генерации контента и Telegramприложение с платёжной интеграцией.
+      </p>
+
+      <div class="flex flex-wrap items-center gap-5 mb-14 reveal" style="transition-delay: 0.2s;">
+        <a href="#contact" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-fg text-bg text-base font-medium hover:bg-white transition-colors">
+          Связаться
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="src/Резюме Измайлов Лев Сергеевич.pdf" target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl border border-border text-base text-muted hover:text-fg hover:border-muted transition-all">Скачать PDF</a>
+      </div>
+
+      <div class="terminal reveal" style="transition-delay: 0.25s;">
+        <div class="terminal-header">
+          <span class="terminal-dot bg-[#ff5f57]"></span>
+          <span class="terminal-dot bg-[#febc2e]"></span>
+          <span class="terminal-dot bg-[#28c840]"></span>
+          <span class="ml-3 text-sm text-muted">about.sh</span>
+        </div>
+        <div class="p-6 text-sm md:text-[15px] leading-loose">
+          <div><span class="text-muted">$</span> <span class="accent">cat</span> profile.json</div>
+          <div class="text-muted mt-3">
+            <span class="text-fg">{</span><br>
+            &nbsp;&nbsp;<span class="accent-pink">"location"</span>: <span class="text-green-400">"Москва, Россия"</span>,<br>
+            &nbsp;&nbsp;<span class="accent-pink">"focus"</span>: <span class="text-green-400">"ML/DS & AI Architecture"</span>,<br>
+            &nbsp;&nbsp;<span class="accent-pink">"experience"</span>: <span class="text-green-400">"3+ года"</span>,<br>
+            &nbsp;&nbsp;<span class="accent-pink">"stack"</span>: [<span class="text-green-400">"Python"</span>, <span class="text-green-400">"PyTorch"</span>, <span class="text-green-400">"LangChain/LangGraph"</span>, <span class="text-green-400">"Docker"</span>],<br>
+            &nbsp;&nbsp;<span class="accent-pink">"languages"</span>: [<span class="text-green-400">"Русский (родной)"</span>, <span class="text-green-400">"English (B2)"</span>],<br>
+            &nbsp;&nbsp;<span class="accent-pink">"currently"</span>: <span class="text-green-400">"RAG-системы, vLLM, MCP, Opencode"</span><br>
+            <span class="text-fg">}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="pb-28 px-8">
+    <div class="max-w-[960px] mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+        <div class="card p-6">
+          <div class="text-3xl font-heading font-bold text-fg mb-1">3+</div>
+          <div class="text-sm text-muted">Года опыта</div>
+        </div>
+        <div class="card p-6">
+          <div class="text-3xl font-heading font-bold text-fg mb-1">6</div>
+          <div class="text-sm text-muted">Мест работы</div>
+        </div>
+        <div class="card p-6">
+          <div class="text-3xl font-heading font-bold text-fg mb-1">2</div>
+          <div class="text-sm text-muted">Пет-проекта</div>
+        </div>
+        <div class="card p-6">
+          <div class="text-3xl font-heading font-bold text-fg mb-1">Магистр</div>
+          <div class="text-sm text-muted">С отличием</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="experience" class="pb-28 px-8">
+    <div class="max-w-[960px] mx-auto">
+      <h2 class="font-heading font-semibold text-2xl text-fg mb-12 reveal">Опыт работы</h2>
+      <div class="space-y-0 reveal">
+
+        <div class="relative pl-10 pb-12 border-l border-border group">
+          <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-violet-500 -translate-x-[5px] group-hover:scale-150 transition-transform"></div>
+          <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 mb-2">
+            <h3 class="font-heading font-semibold text-lg text-fg">Главный специалист отдела прикладных решений в сфере ИИ</h3>
+            <span class="hidden md:inline text-sm text-muted">·</span>
+            <span class="text-sm text-muted font-mono">Сен 2025 — н.в.</span>
+          </div>
+          <p class="text-base text-muted mb-4">ФГАУ «ЦИТ» — Москва</p>
+          <ul class="space-y-2 text-base text-muted">
+            <li>Руководство разработкой и внедрением прикладных решений на основе ИИ для государственных учреждений</li>
+            <li>Координация работы команды специалистов по машинному обучению и анализу данных</li>
+            <li>Проектирование архитектуры AI-систем и разработка стратегии интеграции в существующие процессы</li>
+            <li>Разработка RAG-систем в закрытом контуре: пайплайны обработки документов, векторизация, семантический поиск на базе HuggingFace Transformers и vLLM</li>
+            <li>Интеграция ASR-моделей для транскрибации, предобработка данных с Pandas и PyTorch, развёртывание UI через OpenWebUI</li>
+            <li>Внедрение MCP (Model Context Protocol) для контролируемого доступа ИИ-агентов к внутренним инструментам</li>
+          </ul>
+        </div>
+
+        <div class="relative pl-10 pb-12 border-l border-border group">
+          <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-violet-500/50 -translate-x-[5px] group-hover:scale-150 transition-transform"></div>
+          <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 mb-2">
+            <h3 class="font-heading font-semibold text-lg text-fg">Программист</h3>
+            <span class="hidden md:inline text-sm text-muted">·</span>
+            <span class="text-sm text-muted font-mono">Май 2025 — Июн 2025</span>
+          </div>
+          <p class="text-base text-muted mb-4">ООО РИИТ</p>
+          <ul class="space-y-2 text-base text-muted">
+            <li>Разработка инструментов для извлечения библиографических списков из научных текстов с использованием регулярных выражений и Natasha</li>
+            <li>Автоматизация обработки текстовых данных: преобразование дат из текстового формата в числовой</li>
+            <li>Оптимизация алгоритмов распознавания структурированных блоков в неструктурированных текстах</li>
+            <li>Подготовка и тестирование решений на большом массиве документов для повышения точности извлечения</li>
+          </ul>
+        </div>
+
+        <div class="relative pl-10 pb-12 border-l border-border group">
+          <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-violet-500/50 -translate-x-[5px] group-hover:scale-150 transition-transform"></div>
+          <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 mb-2">
+            <h3 class="font-heading font-semibold text-lg text-fg">Python Backend-разработчик Telegram-приложений</h3>
+            <span class="hidden md:inline text-sm text-muted">·</span>
+            <span class="text-sm text-muted font-mono">Дек 2024 — Май 2025</span>
+          </div>
+          <p class="text-base text-muted mb-4">Crypton</p>
+          <ul class="space-y-2 text-base text-muted">
+            <li>Разработал с нуля Telegram-мини-приложение для продажи цифровых услуг с интеграцией внешних API</li>
+            <li>Реализовал backend на Python с Telegram WebApp API, спроектировал реляционную БД с реферальной системой</li>
+            <li>Настроил онлайн-платежи через платёжные шлюзы, внедрил Celery для асинхронных задач</li>
+            <li>Контейнеризировал приложение в Docker, добился конверсии заказов ~8%</li>
+          </ul>
+        </div>
+
+        <div class="relative pl-10 pb-12 border-l border-border group">
+          <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-violet-500/40 -translate-x-[5px] group-hover:scale-150 transition-transform"></div>
+          <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 mb-2">
+            <h3 class="font-heading font-semibold text-lg text-fg">Инженер-исследователь</h3>
+            <span class="hidden md:inline text-sm text-muted">·</span>
+            <span class="text-sm text-muted font-mono">Янв 2024 — Сен 2024</span>
+          </div>
+          <p class="text-base text-muted mb-4">DV Group</p>
+          <ul class="space-y-2 text-base text-muted">
+            <li>Предсказание покупок пользователей на 21 день с использованием CatBoost и XGBoost</li>
+            <li>Анализ поведения пользователей и фасетных признаков товаров для повышения точности прогноза</li>
+            <li>Построение полного пайплайна: сбор данных, очистка, генерация признаков, обучение и интерпретация</li>
+            <li>Подготовка аналитического отчёта и презентации с рекомендациями для MVP</li>
+          </ul>
+        </div>
+
+        <div class="relative pl-10 pb-12 border-l border-border group">
+          <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-violet-500/30 -translate-x-[5px] group-hover:scale-150 transition-transform"></div>
+          <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 mb-2">
+            <h3 class="font-heading font-semibold text-lg text-fg">ML-инженер</h3>
+            <span class="hidden md:inline text-sm text-muted">·</span>
+            <span class="text-sm text-muted font-mono">Ноя 2022 — Сен 2023</span>
+          </div>
+          <p class="text-base text-muted mb-4">NIT</p>
+          <ul class="space-y-2 text-base text-muted">
+            <li>Подготовка и очистка данных: обработка пропусков, кодирование категориальных признаков, масштабирование</li>
+            <li>Разведочный анализ (EDA) с Pandas и Seaborn, обучение моделей: логистическая регрессия, случайный лес, градиентный бустинг</li>
+            <li>Построение ML-пайплайнов с MLflow, кросс-валидация, метрики качества (F1, ROC-AUC)</li>
+          </ul>
+        </div>
+
+        <div class="relative pl-10 pb-0 border-l border-transparent group">
+          <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-violet-500/20 -translate-x-[5px] group-hover:scale-150 transition-transform"></div>
+          <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 mb-2">
+            <h3 class="font-heading font-semibold text-lg text-fg">Стажёр</h3>
+            <span class="hidden md:inline text-sm text-muted">·</span>
+            <span class="text-sm text-muted font-mono">Май 2022 — Сен 2022</span>
+          </div>
+          <p class="text-base text-muted mb-4">Сбер</p>
+          <ul class="space-y-2 text-base text-muted">
+            <li>Разработка датасета через парсинг данных для обучения NLP-модели</li>
+            <li>Дообучение NLP-модели на русском языке для классификации текстов</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="skills" class="pb-28 px-8">
+    <div class="max-w-[960px] mx-auto">
+      <h2 class="font-heading font-semibold text-2xl text-fg mb-12 reveal">Навыки</h2>
+      <div class="space-y-10 reveal">
+        <div>
+          <h3 class="text-sm font-mono text-muted uppercase tracking-widest mb-4">ML & Data Science</h3>
+          <div class="flex flex-wrap gap-2.5">
+            <span class="tag">PyTorch</span><span class="tag">Transformers (HuggingFace)</span><span class="tag">CatBoost</span><span class="tag">XGBoost</span><span class="tag">Scikit-learn</span><span class="tag">MLflow</span><span class="tag">Pandas</span><span class="tag">Seaborn</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-sm font-mono text-muted uppercase tracking-widest mb-4">NLP & AI</h3>
+          <div class="flex flex-wrap gap-2.5">
+            <span class="tag">BERT / RuBERT</span><span class="tag">RAG-системы</span><span class="tag">vLLM</span><span class="tag">OpenWebUI</span><span class="tag">MCP</span><span class="tag">Natasha</span><span class="tag">ASR</span><span class="tag">Векторный поиск</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-sm font-mono text-muted uppercase tracking-widest mb-4">Backend & DevOps</h3>
+          <div class="flex flex-wrap gap-2.5">
+            <span class="tag">Python</span><span class="tag">Celery</span><span class="tag">Docker</span><span class="tag">n8n</span><span class="tag">Telegram Bot API</span><span class="tag">Google API</span><span class="tag">PostgreSQL</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-sm font-mono text-muted uppercase tracking-widest mb-4">Языки</h3>
+          <div class="flex flex-wrap gap-2.5">
+            <span class="tag">Русский — родной</span><span class="tag">English — B2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="projects" class="pb-28 px-8">
+    <div class="max-w-[960px] mx-auto">
+      <h2 class="font-heading font-semibold text-2xl text-fg mb-12 reveal">Пет-проекты</h2>
+      <div class="grid md:grid-cols-2 gap-5 reveal">
+
+        <div class="card p-7 group block">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="font-heading font-semibold text-lg text-fg">Автоматизация генерации контента</h3>
+            <svg class="w-5 h-5 text-muted group-hover:text-fg group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <p class="text-base text-muted mb-4 leading-relaxed">Система автоматической генерации и публикации мультимедийного контента для TikTok, VK, YouTube Shorts, Reels и Telegram. На базе n8n и Python-скриптов реализованы сценарии сбора идей, генерации видео, подготовки постов через Gemini API.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-sm font-mono text-muted">Python</span><span class="text-sm text-muted">·</span><span class="text-sm font-mono text-muted">n8n</span><span class="text-sm text-muted">·</span><span class="text-sm font-mono text-muted">Gemini API</span><span class="text-sm text-muted">·</span><span class="text-sm font-mono text-muted">Google API</span><span class="text-sm text-muted">·</span><span class="text-sm font-mono text-muted">Telegram Bot API</span>
+          </div>
+        </div>
+
+        <div class="card p-7 group block">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="font-heading font-semibold text-lg text-fg">Telegram-мини-приложение</h3>
+            <svg class="w-5 h-5 text-muted group-hover:text-fg group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <p class="text-base text-muted mb-4 leading-relaxed">Telegram-мини-приложение для продажи цифровых услуг с интеграцией платёжных шлюзов, реферальной системой и аналитикой. Конверсия заказов ~8%. Backend на Python, Celery, Docker.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-sm font-mono text-muted">Python</span><span class="text-sm text-muted">·</span><span class="text-sm font-mono text-muted">Telegram WebApp</span><span class="text-sm text-muted">·</span><span class="text-sm font-mono text-muted">Celery</span><span class="text-sm text-muted">·</span><span class="text-sm font-mono text-muted">Docker</span><span class="text-sm text-muted">·</span><span class="text-sm font-mono text-muted">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="education" class="pb-28 px-8">
+    <div class="max-w-[960px] mx-auto">
+      <h2 class="font-heading font-semibold text-2xl text-fg mb-12 reveal">Образование</h2>
+      <div class="space-y-0 reveal">
+
+        <div class="relative pl-10 pb-12 border-l border-border group">
+          <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-violet-500 -translate-x-[5px] group-hover:scale-150 transition-transform"></div>
+          <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 mb-2">
+            <h3 class="font-heading font-semibold text-lg text-fg">Магистратура — Искусственный интеллект и машинное обучение</h3>
+            <span class="hidden md:inline text-sm text-muted">·</span>
+            <span class="text-sm text-muted font-mono">2023 — 2025</span>
+          </div>
+          <p class="text-base text-muted mb-3">НИТУ «МИСиС» — Москва · Окончил с отличием</p>
+          <ul class="space-y-2 text-base text-muted">
+            <li>Дипломная работа: «Веб-сервис для прогнозирования тренда криптовалют на основе анализа настроений в соцсетях и рыночных факторов»</li>
+          </ul>
+        </div>
+
+        <div class="relative pl-10 pb-0 border-l border-transparent group">
+          <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-violet-500/30 -translate-x-[5px] group-hover:scale-150 transition-transform"></div>
+          <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 mb-2">
+            <h3 class="font-heading font-semibold text-lg text-fg">Бакалавриат — Прикладная математика</h3>
+            <span class="hidden md:inline text-sm text-muted">·</span>
+            <span class="text-sm text-muted font-mono">2019 — 2023</span>
+          </div>
+          <p class="text-base text-muted mb-3">НИТУ «МИСиС» — Москва</p>
+          <ul class="space-y-2 text-base text-muted">
+            <li>Дипломная работа: «Анализатор текстовых сообщений на русском языке с использованием RuBERT и графа синтаксической конструкции»</li>
+            <li>Научная работа: «Формирование числового кода фрактальной структуры текстурированного оптически анизотропного гластэлита»</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact" class="pb-28 px-8">
+    <div class="max-w-[960px] mx-auto">
+      <div class="terminal reveal">
+        <div class="terminal-header">
+          <span class="terminal-dot bg-[#ff5f57]"></span>
+          <span class="terminal-dot bg-[#febc2e]"></span>
+          <span class="terminal-dot bg-[#28c840]"></span>
+          <span class="ml-3 text-sm text-muted">contact.sh</span>
+        </div>
+        <div class="p-7">
+          <p class="text-base text-muted mb-6">Открыт к новым проектам, консультациям и предложениям. Предпочитаю асинхронную коммуникацию, но всегда готов к звонку.</p>
+          <div class="space-y-3 text-[15px] font-mono">
+            <div class="flex items-center gap-4">
+              <span class="text-muted w-24 shrink-0">email</span>
+              <a href="mailto:workizlaster@gmail.com" class="accent hover:underline">workizlaster@gmail.com</a>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-muted w-24 shrink-0">telegram</span>
+              <a href="https://t.me/izlaster" target="_blank" rel="noopener" class="accent hover:underline">@izlaster</a>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-muted w-24 shrink-0">phone</span>
+              <a href="tel:+79169485027" class="accent hover:underline">+7 (916) 948-50-27</a>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-muted w-24 shrink-0">location</span>
+              <span class="text-fg">Москва, Россия</span>
+            </div>
+          </div>
+          <div class="mt-8 pt-5 border-t border-border">
+            <div class="flex items-center gap-2 text-[15px] text-muted">
+              <span class="text-muted">$</span>
+              <span class="accent">echo</span>
+              <span class="text-green-400">"Давайте создадим что-то вместе"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="border-t border-border py-10 px-8">
+    <div class="max-w-[960px] mx-auto flex items-center justify-between text-sm text-muted">
+      <p>&copy; <span id="year"></span> Лев Измайлов</p>
+      <a href="https://github.com/izlaster" target="_blank" rel="noopener" class="hover:text-fg transition-colors">GitHub</a>
+    </div>
+  </footer>
+
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    const roles = ['ML/DS Engineer', 'AI Architect', 'NLP Specialist', 'RAG Systems Developer', 'Python Backend Developer'];
+    const tw = document.getElementById('typewriter');
+    let ri = 0, ci = 0, del = false, spd = 80;
+
+    (function typewrite() {
+      const cur = roles[ri];
+      if (del) { tw.textContent = cur.substring(0, ci - 1); ci--; spd = 35; }
+      else { tw.textContent = cur.substring(0, ci + 1); ci++; spd = 70; }
+      if (!del && ci === cur.length) { spd = 2000; del = true; }
+      else if (del && ci === 0) { del = false; ri = (ri + 1) % roles.length; spd = 400; }
+      setTimeout(typewrite, spd);
+    })();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
