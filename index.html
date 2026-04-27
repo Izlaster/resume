@@ -133,37 +133,9 @@
       <p class="text-lg leading-relaxed text-muted max-w-[960px] mb-12 reveal" style="transition-delay: 0.15s;">
         Специалист в области машинного обучения и построения end-to-end ML-решений и разработки прикладных сервисов. Работал с задачами прогнозирования пользовательского поведения, обработки естественного языка (NLP), автоматизации и интеграции через API. Имеет опыт применения моделей CatBoost, XGBoost, BERT, а также разработки RAG-систем в закрытом контуре с использованием больших языковых моделей на vLLM и векторного поиска, интеграции ASR-моделей для транскрибации, предобработки данных через Pandas и PyTorch, развёртывания интерфейсов на базе OpenWebUI и оркестровки взаимодействия моделей через MCP для безопасной работы с внутренними данными. Владею практиками создания микросервисов на Python с использованием Docker, Celery, n8n и облачных сервисов (Google API, Telegram API). Реализованные проекты включают систему автоматической генерации контента и Telegram-приложение с платёжной интеграцией.
       </p>
-
-      <div class="flex flex-wrap items-center gap-5 mb-14 reveal" style="transition-delay: 0.2s;">
-        <a href="#contact" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-fg text-bg text-base font-medium hover:bg-white transition-colors">
-          Связаться
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="src/Резюме Измайлов Лев Сергеевич.pdf" target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl border border-border text-base text-muted hover:text-fg hover:border-muted transition-all">Скачать PDF</a>
-      </div>
-
-      <!-- <div class="terminal reveal" style="transition-delay: 0.25s;">
-        <div class="terminal-header">
-          <span class="terminal-dot bg-[#ff5f57]"></span>
-          <span class="terminal-dot bg-[#febc2e]"></span>
-          <span class="terminal-dot bg-[#28c840]"></span>
-          <span class="ml-3 text-sm text-muted">about.sh</span>
-        </div>
-        <div class="p-6 text-sm md:text-[15px] leading-loose">
-          <div><span class="text-muted">$</span> <span class="accent">cat</span> profile.json</div>
-          <div class="text-muted mt-3">
-            <span class="text-fg">{</span><br>
-            &nbsp;&nbsp;<span class="accent-pink">"location"</span>: <span class="text-green-400">"Москва, Россия"</span>,<br>
-            &nbsp;&nbsp;<span class="accent-pink">"focus"</span>: <span class="text-green-400">"ML/DS & AI Architecture"</span>,<br>
-            &nbsp;&nbsp;<span class="accent-pink">"experience"</span>: <span class="text-green-400">"3+ года"</span>,<br>
-            &nbsp;&nbsp;<span class="accent-pink">"stack"</span>: [<span class="text-green-400">"Python"</span>, <span class="text-green-400">"PyTorch"</span>, <span class="text-green-400">"LangChain/LangGraph"</span>, <span class="text-green-400">"Docker"</span>],<br>
-            &nbsp;&nbsp;<span class="accent-pink">"languages"</span>: [<span class="text-green-400">"Русский (родной)"</span>, <span class="text-green-400">"English (B2)"</span>],<br>
-            &nbsp;&nbsp;<span class="accent-pink">"currently"</span>: <span class="text-green-400">"RAG-системы, vLLM, MCP, Opencode"</span><br>
-            <span class="text-fg">}</span>
-          </div>
-        </div> -->
       </div>
     </div>
+
     <div class="max-w-[960px] mx-auto">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
         <div class="card p-6">
@@ -183,6 +155,16 @@
           <div class="text-sm text-muted">С отличием</div>
         </div>
       </div>
+    </div>
+
+    <div class="max-w-[960px] mx-auto">
+        <div class="flex flex-wrap items-center gap-5 mt-14 mb-8 reveal" style="transition-delay: 0.2s;">
+            <a href="#contact" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-fg text-bg text-base font-medium hover:bg-white transition-colors">
+            Связаться
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="src/Резюме Измайлов Лев Сергеевич.pdf" target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl border border-border text-base text-muted hover:text-fg hover:border-muted transition-all">Скачать PDF</a>
+        </div>
     </div>
   </section>
 
@@ -469,7 +451,7 @@
       entries.forEach((entry) => {
         if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     document.getElementById('year').textContent = new Date().getFullYear();
